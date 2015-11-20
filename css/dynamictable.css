@@ -8,6 +8,9 @@ Date Created: 10/21/2015
 Description: This is the css file that alters how my table looks.
 */
 @import url(https://fonts.googleapis.com/css?family=Lato:300);
+div{
+    text-align: center;
+}
 body {
     background-color: #1ABC9C;
     text-align: center;
@@ -44,7 +47,13 @@ table {
   select.error, textarea.error, input.error {
     border: 2px solid #e53935;
 }
-#slider{
+#slider1,#slider2,#slider3,#slider4{
+    display: inline-block;
     height: 10px;
     width: 200px;
+}
+#tabs{
+    width: 1000px;
+    margin-left:auto; 
+    margin-right:auto;
 }
