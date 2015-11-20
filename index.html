@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+   <html>
+   <head>
+     <meta charset="utf-8">
+   <!--
+File: /~ali/public_html/assignment5.html
+91.461 Assignment 7:  Creating an Interactive Dynamic Table
+Name: Alexander Li
+Email: Alexander_li1@student.uml.edu
+Affiliation: Umass Lowell Computer Science Undergraduate, in class 91.461 GUI Programming I
+Date Created: 10/20/2015
+Description: Dynamically created a table based on user inputs
+-->   
+   <title>Assignment 8</title>
+   <link rel="stylesheet" type="text/css" href="css/dynamictable.css">
+   <link rel="stylesheet" href="jquery/jquery-ui-1.11.4.custom/jquery-ui.css">
+     <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script> 
+   <script src="jquery/jquery.validate.min.js"></script>
+   <script src="jquery/additional-methods.min.js"></script>
+   <script src="jquery/jquery-ui-1.11.4.custom/jquery-ui.js"></script>
+   <script type="text/javascript" src="table.js"></script>
+   </head>
+   
+     <body>
+         <h1>Dynamic Table Generator</h1>
+         <!-- Generate input boxes for form -->
+         <form id="submitform">
+            <p>Please enter the following numbers.</p><br>
+            Multiplier Start: <input type="text" id="multiplierstart" name="multiplierstart"> <div id="slider"></div><br><br>
+            Multiplier End: <input type="text" id="multiplierend" name="multiplierend"><br><br>
+            Multiplicand Start: <input type="text" id="multiplicandstart" name="multiplicandstart"><br><br>
+            Multiplicand End: <input type="text" id="multiplicandend" name="multiplicandend"><br>
+            <br><br>
+            <input class="submit" type="submit" value="Generate Table">
+            <label for="multiplierstart" class="errorTxt"></label>
+         </form>
+         <div id="tabs">
+            <ul>
+            </ul>
+         </div>
+     </body>
+   
+   </html>

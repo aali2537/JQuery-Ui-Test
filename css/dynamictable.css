@@ -1,0 +1,50 @@
+/*
+File: /~ali/public_html/index.css
+91.461 Assignment 6:  Creating an Interactive Dynamic Table
+Name: Alexander Li
+Email: Alexander_li1@student.uml.edu
+Affiliation: Umass Lowell Computer Science Undergraduate, in class 91.461 GUI Programming I
+Date Created: 10/21/2015
+Description: This is the css file that alters how my table looks.
+*/
+@import url(https://fonts.googleapis.com/css?family=Lato:300);
+body {
+    background-color: #1ABC9C;
+    text-align: center;
+    color: #ffffff;
+    font-family: 'Lato', sans-serif;
+}
+table {
+    color: #1a1a1a;
+    margin-left:auto; 
+    margin-right:auto;
+    border: 1px solid #1ABC9C;
+  }
+  td{
+      width: 4rem;
+  height: 2rem;
+  border: 1px solid #ccc;
+  text-align: center;
+  }
+  .empty{
+      background: #1ABC9C;
+  border-color: #1ABC9C;
+  }
+  .outrow{
+      font-weight: bold;
+      color: black;
+      background: lightblue;
+  border-color: white;
+  }
+  /*styling for error messages */
+   .error{
+      color:#e53935;
+  }
+  /*styling for highlighting boxes corresponding with error*/
+  select.error, textarea.error, input.error {
+    border: 2px solid #e53935;
+}
+#slider{
+    height: 10px;
+    width: 200px;
+}
