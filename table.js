@@ -68,7 +68,7 @@
         tabs.tabs( "refresh" );
         tabCounter++;
         createTable(id);
-         $('#tabs').tabs({ active: id });
+         $("#tabs").tabs("option", "selected", id);
     }
       tabs.delegate( "span.ui-icon-close", "click", function() {
             var panelId = $( this ).closest( "li" ).remove().attr( "aria-controls" );
