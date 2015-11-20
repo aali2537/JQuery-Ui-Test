@@ -68,7 +68,7 @@
         tabs.tabs( "refresh" );
         tabCounter++;
         createTable(id);
-         $( "#tabs" ).tabs({ active: tabCounter });
+         $("#tabs").tabs("option", "active", tabCounter);
     }
       tabs.delegate( "span.ui-icon-close", "click", function() {
             console.log( $( "#" + panelId ));
