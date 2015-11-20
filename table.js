@@ -7,6 +7,7 @@
       step: 1,
       slide: function( event, ui ) {
         $("#multiplierstart").val(ui.value);
+        createTable("controltable");
       }
     });
     $( "#slider2" ).slider({
@@ -16,6 +17,7 @@
       step: 1,
       slide: function( event, ui ) {
         $("#multiplierend").val(ui.value);
+        createTable("controltable");
       }
     });
     $( "#slider3" ).slider({
@@ -25,6 +27,7 @@
       step: 1,
       slide: function( event, ui ) {
         $("#multiplicandstart").val(ui.value);
+        createTable("controltable");
       }
     });
     $( "#slider4" ).slider({
@@ -34,20 +37,25 @@
       step: 1,
       slide: function( event, ui ) {
         $("#multiplicandend").val(ui.value);
+        createTable("controltable");
       }
     });
     //Event handlers for when input box changes and affects slider values
      $("#multiplierstart").change(function() {
         $( "#slider1" ).slider( "value", $("#multiplierstart").val() );
+        createTable("controltable");
     });
     $("#multiplierend").change(function() {
         $( "#slider2" ).slider( "value", $("#multiplierend").val() );
+        createTable("controltable");
     });
     $("#multiplicandstart").change(function() {
         $( "#slider3" ).slider( "value", $("#multiplicandstart").val() );
+        createTable("controltable");
     });
     $("#multiplicandend").change(function() {
         $( "#slider4" ).slider( "value", $("#multiplicandend").val() );
+        createTable("controltable");
     });
      //tab vars     
       var tabTitle = $( "#tab_title" ),
@@ -58,18 +66,18 @@
       var tabs = $( "#tabs" ).tabs();
     
       function addTab() {
-        var label = tabTitle.val() || "Table " + tabCounter,
+        var label =  document.getElementById("multiplierstart").value + "-" + document.getElementById("multiplierend").value + " * " + document.getElementById("multiplicandstart").value + "-" +document.getElementById("multiplicandend").value,
         id = "tabs-" + tabCounter,
         li = $( tabTemplate.replace( /#\{href\}/g, "#" + id ).replace( /#\{label\}/g, label ) ),
         tabContentHtml = tabContent.val() || "Tab " + tabCounter + " content.";
  
         tabs.find( ".ui-tabs-nav" ).append( li );
-        tabs.append( "<div id='" + id + "'><p>" + tabContentHtml + "</p></div>" );
+        tabs.append( "<div id='" + id + "'></div>" );
         tabs.tabs( "refresh" );
         tabCounter++;
-        createTable(id);
         console.log(tabCounter);
          $("#tabs").tabs("option", "active", tabCounter);
+         createTable(id);
     }
       tabs.delegate( "span.ui-icon-close", "click", function() {
             var panelId = $( this ).closest( "li" ).remove().attr( "aria-controls" );
