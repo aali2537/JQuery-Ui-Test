@@ -1,12 +1,54 @@
  $(function() {
      //slider function
-    $( "#slider" ).slider({
-      value:100,
+    $( "#slider1" ).slider({
+      value:0,
       min: -10,
       max: 10,
-      step: 1
+      step: 1,
+      slide: function( event, ui ) {
+        $("#multiplierstart").val(ui.value);
+      }
     });
-    $( "#amount" ).val( "$" + $( "#slider" ).slider( "value" ) );
+    $( "#slider2" ).slider({
+      value:0,
+      min: -10,
+      max: 10,
+      step: 1,
+      slide: function( event, ui ) {
+        $("#multiplierend").val(ui.value);
+      }
+    });
+    $( "#slider3" ).slider({
+      value:0,
+      min: -10,
+      max: 10,
+      step: 1,
+      slide: function( event, ui ) {
+        $("#multiplicandstart").val(ui.value);
+      }
+    });
+    $( "#slider4" ).slider({
+      value:0,
+      min: -10,
+      max: 10,
+      step: 1,
+      slide: function( event, ui ) {
+        $("#multiplicandend").val(ui.value);
+      }
+    });
+    //Event handlers for when input box changes and affects slider values
+     $("#multiplierstart").change(function() {
+        $( "#slider1" ).slider( "value", $("#multiplierstart").val() );
+    });
+    $("#multiplierend").change(function() {
+        $( "#slider2" ).slider( "value", $("#multiplierend").val() );
+    });
+    $("#multiplicandstart").change(function() {
+        $( "#slider3" ).slider( "value", $("#multiplicandstart").val() );
+    });
+    $("#multiplicandend").change(function() {
+        $( "#slider4" ).slider( "value", $("#multiplicandend").val() );
+    });
      //tab vars     
       var tabTitle = $( "#tab_title" ),
       tabContent = $( "#tab_content" ),
