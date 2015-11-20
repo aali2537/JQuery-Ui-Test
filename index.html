@@ -23,8 +23,12 @@ Description: Dynamically created a table based on user inputs
    
      <body>
          <h1>Dynamic Table Generator</h1>
-         <!-- Generate input boxes for form -->
-         <form id="submitform">
+         <div id="tabs">
+            <ul>
+            </ul>
+            <div id="Control-Panel">
+               <!-- Generate input boxes for form -->
+               <form id="submitform">
             <p>Please enter the following numbers.</p><br>
             Multiplier Start: <input type="text" id="multiplierstart" name="multiplierstart"> &nbsp <div id="slider1"></div><br><br>
             Multiplier End: <input type="text" id="multiplierend" name="multiplierend"> &nbsp <div id="slider2"></div><br><br>
@@ -34,9 +38,7 @@ Description: Dynamically created a table based on user inputs
             <input class="submit" type="submit" value="Generate Table">
             <label for="multiplierstart" class="errorTxt"></label>
          </form>
-         <div id="tabs">
-            <ul>
-            </ul>
+            </div>
          </div>
      </body>
    
