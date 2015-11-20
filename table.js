@@ -75,8 +75,8 @@
             console.log( $( "#" + panelId ));
             var panelId = $( this ).closest( "li" ).remove().attr( "aria-controls" );
             $( "#" + panelId ).remove();
-            tabs.tabs( "refresh" );
             tabCounter--;
+            tabs.tabs( "refresh" );
     });
      
      // Generates multiplication table
