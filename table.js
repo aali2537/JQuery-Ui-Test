@@ -53,7 +53,7 @@
       var tabTitle = $( "#tab_title" ),
       tabContent = $( "#tab_content" ),
       tabTemplate = "<li><a href='#{href}'>#{label}</a> <span class='ui-icon ui-icon-close' role='presentation'>Remove Tab</span></li>",
-      tabCounter = 1;
+      tabCounter = 0;
  
       var tabs = $( "#tabs" ).tabs();
     
