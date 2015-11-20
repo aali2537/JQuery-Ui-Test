@@ -72,10 +72,10 @@
          $("#tabs").tabs("option", "active", tabCounter);
     }
       tabs.delegate( "span.ui-icon-close", "click", function() {
-            console.log( $( "#" + panelId ));
             var panelId = $( this ).closest( "li" ).remove().attr( "aria-controls" );
             $( "#" + panelId ).remove();
             tabCounter--;
+            console.log(tabCounter);
             tabs.tabs( "refresh" );
     });
      
