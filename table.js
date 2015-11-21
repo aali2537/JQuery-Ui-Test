@@ -140,6 +140,22 @@
            var strfooter = "</table>";
            document.getElementById(tableid).innerHTML = strheader + strbody + strfooter;
        };
+       
+       
+    $.validator.addMethod('lessThanEqual', function(value, element, param) {
+       // debugging code added by Jesse
+       console.log( "value = " + value + " (" + typeof( value ) + ")" ) ;        // value = 1 (string)
+       console.log( "element = " + element + " (" + typeof( element ) + ")" ) ;  // element = [object HTMLInputElement] (object)
+       console.log( "$(element).val() = " + $(element).val() ) ;                 // $(element).val() = 1
+       console.log( "param = " + param + " (" + typeof( param ) + ")" ) ;        // param = 10 (number)
+       console.log( "this.optional(element) = " + this.optional(element) ) ;     // this.optional(element) = false
+
+       // Chris's original code
+       // return this.optional(element) || parseInt(value) <= parseInt($(param).val());
+
+       // Jesse's corrected code
+       return this.optional(element) || parseInt(value) <= param ;
+      }, "The value must be less than {0}.");   
   
     // Setup form validation on the submit form
     $("#submitform").validate({
@@ -148,7 +164,8 @@
         rules: {
             multiplierstart: {
                 required: true,
-                number: true
+                number: true,
+                lessThanEqual: true
             },
             multiplierend: {
                 required: true,
@@ -156,7 +173,8 @@
             },
             multiplicandstart: {
                 required: true,
-                number: true
+                number: true,
+                lessThanEqual: true
             },
             multiplicandend: {
                 required: true,
@@ -168,11 +186,13 @@
         messages: {
             multiplierstart: {
                 required: "Please provide a starting multiplier value",
-                number: "Please only submit numbers for starting multiplier value"
+                number: "Please only submit numbers for starting multiplier value",
+                lessThanEqual: "Please submit a starting value for multiplier that is less than the ending value"
             },
             multiplierend: {
                 required: "Please provide a ending multiplier value",
-                number: "Please only submit numbers for ending multiplier value"
+                number: "Please only submit numbers for ending multiplier value",
+                lessThanEqual: "Please submit a starting value for multiplicand that is less than the ending value"
             },
             multiplicandstart: {
                 required: "Please provide a starting multiplicand value",
