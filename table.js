@@ -1,3 +1,9 @@
+//91.461 Assignment 8: Using the jQuery UI Slider and Tab Widgets 
+//Name: Alexander Li
+//Email: Alexander_li1@student.uml.edu
+//Affiliation: Umass Lowell Computer Science Undergraduate, in class 91.461 GUI Programming I
+//Date Created: 11/19/2015
+//Description: The js for tabs, sliders, and table creation
  $(function() {
      //slider function
     $( "#slider1" ).slider({
